@@ -2,8 +2,6 @@ import { Table, Column, Model, DataType } from 'sequelize-typescript';
 
 @Table({
   tableName: 'accounts',
-  timestamps: true,
-  paranoid: true,
 })
 export class Account extends Model<Account> {
   @Column({
@@ -16,6 +14,7 @@ export class Account extends Model<Account> {
   @Column({
     type: DataType.STRING,
     allowNull: false,
+    unique: true,
   })
   name: string;
 

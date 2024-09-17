@@ -1,4 +1,4 @@
-import { Account } from './accounts.entity.js';
+import { Account } from './accounts/accounts.entity.js';
 import { data_type_enum } from './datatype.enum';
 import {
   Table,
