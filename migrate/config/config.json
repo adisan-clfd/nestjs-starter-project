@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "adisan",
+    "password": "password",
+    "database": "mock_db",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
