@@ -19,6 +19,12 @@ export class Account extends Model<Account> {
   name: string;
 
   @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  password: string;
+
+  @Column({
     type: DataType.DATE,
     allowNull: false,
   })

@@ -4,4 +4,8 @@ export class CreateAccountDto {
   @IsString()
   @IsNotEmpty()
   name: string;
+
+  @IsString()
+  @IsNotEmpty()
+  password: string;
 }
