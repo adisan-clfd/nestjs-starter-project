@@ -1,12 +1,13 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Setting } from './settings.entity';
 import { CreateSettingDto } from './dto/create-setting.dto';
 import { UpdateSettingDto } from './dto/update-setting.dto';
+import { InjectModel } from '@nestjs/sequelize';
 
 @Injectable()
 export class SettingsService {
   constructor(
-    @Inject(Setting)
+    @InjectModel(Setting)
     private settingModel: typeof Setting,
   ) {}
 

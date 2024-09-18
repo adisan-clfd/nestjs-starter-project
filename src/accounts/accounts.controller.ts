@@ -1,6 +1,6 @@
 import { AccountsService } from './accounts.service';
 import { CreateAccountDto } from './dto/create-account.dto';
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Get, Body } from '@nestjs/common';
 
 @Controller('accounts')
 export class AccountsController {
@@ -11,8 +11,18 @@ export class AccountsController {
     try {
       const account = await this.accountsService.create(createAccountDto);
       return account;
-    } catch (error) {
-      throw new Error(error);
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
+
+  @Get()
+  async findAll() {
+    try {
+      const allAccounts = await this.accountsService.findAll();
+      return allAccounts;
+    } catch (err) {
+      throw new Error(err);
     }
   }
 }

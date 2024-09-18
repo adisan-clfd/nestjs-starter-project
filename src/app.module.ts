@@ -4,9 +4,23 @@ import { AppService } from './app.service';
 import { databaseProviders } from './database.providers';
 import { AccountsModule } from './accounts/accounts.module';
 import { SettingsModule } from './settings/settings.module';
+import { SequelizeModule } from '@nestjs/sequelize';
 
 @Module({
-  imports: [AccountsModule, SettingsModule],
+  imports: [
+    SequelizeModule.forRoot({
+      dialect: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'adisan',
+      password: 'password',
+      database: 'mock_db',
+      autoLoadModels: true,
+      synchronize: true,
+    }),
+    AccountsModule,
+    SettingsModule,
+  ],
   controllers: [AppController],
   providers: [AppService, ...databaseProviders],
 })
