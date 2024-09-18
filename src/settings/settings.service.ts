@@ -16,6 +16,9 @@ export class SettingsService {
 
   async findOne(id: number) {
     const setting = await this.settingModel.findByPk(id);
+    if (!setting) {
+      throw new Error('No setting exists corresponding to this id.');
+    }
     return setting;
   }
 
@@ -31,11 +34,18 @@ export class SettingsService {
     updateSettingDto: UpdateSettingDto,
   ): Promise<Setting> {
     const setting = await this.settingModel.findByPk(id);
+    if (!setting) {
+      throw new Error('No setting exists corresponding to this id.');
+    }
     return setting.update({ ...updateSettingDto });
   }
 
-  async delete(id: number): Promise<void> {
+  async delete(id: number): Promise<number> {
     const setting = await this.settingModel.findByPk(id);
-    return setting.destroy();
+    if (!setting) {
+      throw new Error('No setting exists corresponding to this id.');
+    }
+    setting.destroy();
+    return id;
   }
 }
