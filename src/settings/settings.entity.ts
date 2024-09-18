@@ -1,5 +1,5 @@
-import { Account } from './accounts/accounts.entity.js';
-import { data_type_enum } from './datatype.enum';
+import { Account } from '../accounts/accounts.entity.js';
+import { data_type_enum } from '../constants/datatype.enum';
 import {
   Table,
   Column,
@@ -11,8 +11,6 @@ import {
 
 @Table({
   tableName: 'settings',
-  timestamps: true,
-  paranoid: true,
 })
 export class Setting extends Model<Setting> {
   @PrimaryKey
