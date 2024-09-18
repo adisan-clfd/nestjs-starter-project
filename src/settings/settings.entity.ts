@@ -10,7 +10,7 @@ import {
 } from 'sequelize-typescript';
 
 @Table({
-  tableName: 'Setting',
+  tableName: 'setting',
 })
 export class Setting extends Model<Setting> {
   @PrimaryKey

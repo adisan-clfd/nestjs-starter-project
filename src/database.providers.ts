@@ -10,7 +10,7 @@ export const databaseProviders = [
         dialect: 'postgres',
         host: 'localhost',
         port: 5432,
-        username: 'adisan_db',
+        username: 'adisan',
         password: 'password',
         database: 'mock_db',
       });

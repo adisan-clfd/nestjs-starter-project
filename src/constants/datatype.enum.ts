@@ -1,6 +1,6 @@
 export enum data_type_enum {
-  STRING,
-  NUMBER,
-  BOOLEAN,
-  JSON,
+  STRING = 'string',
+  NUMBER = 'number',
+  BOOLEAN = 'boolean',
+  JSON = 'json',
 }
