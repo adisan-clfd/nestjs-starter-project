@@ -9,7 +9,7 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    return queryInterface.createTable('Account', {
+    return queryInterface.createTable('account', {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -43,6 +43,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.dropTable('accounts');
+    await queryInterface.dropTable('account');
   },
 };
