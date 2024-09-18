@@ -4,3 +4,5 @@ export enum data_type_enum {
   BOOLEAN = 'boolean',
   JSON = 'json',
 }
+
+export const dataTypeEnumValues = Object.values(data_type_enum);

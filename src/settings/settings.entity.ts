@@ -1,5 +1,5 @@
 import { Account } from '../accounts/accounts.entity.js';
-import { data_type_enum } from '../constants/datatype.enum';
+import { data_type_enum, dataTypeEnumValues } from '../constants/datatype.enum';
 import {
   Table,
   Column,
@@ -27,7 +27,7 @@ export class Setting extends Model<Setting> {
   name: string;
 
   @Column({
-    type: DataType.ENUM,
+    type: DataType.ENUM(...dataTypeEnumValues),
     allowNull: false,
   })
   data_type: data_type_enum;
