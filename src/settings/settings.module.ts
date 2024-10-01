@@ -8,7 +8,7 @@ import { AccountsModule } from 'src/accounts/accounts.module';
 @Module({
   imports: [SequelizeModule.forFeature([Setting]), AccountsModule],
   controllers: [SettingsController],
-  providers: [SettingsService, Setting],
+  providers: [SettingsService],
   exports: [SettingsService],
 })
 export class SettingsModule {}

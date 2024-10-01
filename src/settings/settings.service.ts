@@ -24,9 +24,13 @@ export class SettingsService {
   }
 
   async create(createSettingDto: CreateSettingDto): Promise<Setting> {
+    console.log(createSettingDto);
     const setting = await this.settingModel.create({
       ...createSettingDto,
     });
+    console.log(
+      `This is the name getter output using setting.name: ${setting.name}`,
+    );
     return setting;
   }
 
@@ -35,6 +39,7 @@ export class SettingsService {
     updateSettingDto: UpdateSettingDto,
   ): Promise<Setting> {
     const setting = await this.settingModel.findByPk(id);
+    console.log(setting.name);
     if (!setting) {
       throw new Error('No setting exists corresponding to this id.');
     }
